@@ -43,6 +43,8 @@ body {
 .page-content {
   position: relative;
   z-index: 1;
+  padding-left: clamp(1.25rem, 4vw, 3.5rem);
+  padding-right: clamp(1.25rem, 4vw, 3.5rem);
 }
 
 h1,
@@ -561,6 +563,11 @@ footer {
 
   .section-shell {
     margin-bottom: 4rem;
+  }
+
+  .page-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .day-card,
