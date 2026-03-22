@@ -774,6 +774,10 @@ footer {
   display: none;
 }
 
+.print-sheet-page {
+  width: 100%;
+}
+
 .print-sheet-header,
 .print-map-panel,
 .print-timeline-panel,
@@ -825,6 +829,10 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.print-day-card-wide {
+  grid-column: 1 / -1;
 }
 
 .print-day-card {
@@ -1030,6 +1038,15 @@ footer {
     margin-bottom: 0.9rem;
   }
 
+  .print-sheet-page-map {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-sheet-page-itinerary {
+    page-break-before: avoid;
+  }
+
   .print-sheet-kicker,
   .print-block-kicker {
     color: #8d6b42 !important;
@@ -1053,7 +1070,7 @@ footer {
   }
 
   .print-map-panel img {
-    max-height: none;
+    max-height: 238mm;
     height: auto;
     object-fit: contain;
     border: 1px solid #d8c4aa;
@@ -1061,49 +1078,49 @@ footer {
   }
 
   .print-timeline-grid {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
   }
 
   .print-day-card {
-    padding: 0.8rem 0.9rem;
+    padding: 0.58rem 0.68rem;
     border: 1px solid #d8c4aa;
-    border-radius: 0.85rem;
+    border-radius: 0.65rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   .print-day-card h3 {
     color: #8d6b42 !important;
-    font-size: 0.78rem;
-    letter-spacing: 0.16em;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
     text-align: left;
   }
 
   .print-day-items {
-    gap: 0.5rem;
-    margin-top: 0.7rem;
+    gap: 0.33rem;
+    margin-top: 0.5rem;
   }
 
   .print-day-item {
-    grid-template-columns: 3.3rem 1fr;
-    gap: 0.65rem;
+    grid-template-columns: 2.8rem 1fr;
+    gap: 0.45rem;
   }
 
   .print-day-item span {
-    min-height: 1.45rem;
-    padding: 0.15rem 0.35rem;
-    border-radius: 0.45rem;
+    min-height: 1.2rem;
+    padding: 0.1rem 0.25rem;
+    border-radius: 0.35rem;
     background: #f0dfca !important;
     color: #5f4423 !important;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 800;
   }
 
   .print-day-item p {
     color: #1b2329 !important;
-    font-size: 0.66rem;
-    line-height: 1.25;
+    font-size: 0.56rem;
+    line-height: 1.12;
     text-transform: uppercase;
   }
 
