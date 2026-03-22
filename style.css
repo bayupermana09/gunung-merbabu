@@ -322,6 +322,27 @@ h4 {
   background: rgba(158, 182, 167, 0.08);
 }
 
+.optional-item {
+  justify-content: flex-start;
+}
+
+.optional-item:hover {
+  background: rgba(158, 182, 167, 0.08);
+}
+
+.disabled-item {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.disabled-item:hover {
+  background: transparent;
+}
+
+.optional-item > span:nth-child(3) {
+  color: inherit;
+}
+
 .custom-check {
   width: 18px;
   height: 18px;
@@ -333,9 +354,39 @@ h4 {
   transition: all 0.3s ease;
 }
 
+.optional-item .custom-check {
+  border-color: var(--moss);
+  background: transparent;
+}
+
+.disabled-item .custom-check {
+  border-color: rgba(158, 182, 167, 0.35);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .check-container input:checked + .custom-check {
   background: linear-gradient(135deg, var(--earth-brown), #d0b38d);
   transform: rotate(360deg);
+}
+
+.optional-item input:checked + .custom-check {
+  background: linear-gradient(135deg, var(--earth-brown), #d0b38d);
+  box-shadow: none;
+}
+
+.optional-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(184, 147, 100, 0.28);
+  border-radius: 999px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth-brown);
+  background: rgba(184, 147, 100, 0.08);
 }
 
 .check-container input:checked + .custom-check::after {
@@ -462,6 +513,36 @@ h4 {
   background: linear-gradient(90deg, var(--earth-brown), #d6c2a7);
   transition: width 0.5s ease;
   box-shadow: 0 0 14px rgba(184, 147, 100, 0.24);
+}
+
+.progress-group {
+  margin-top: 1rem;
+}
+
+.progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.progress-label {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--earth-brown);
+}
+
+.optional-progress {
+  background: rgba(158, 182, 167, 0.14);
+}
+
+.optional-fill {
+  background: linear-gradient(90deg, var(--moss), #c7d4cd);
+  box-shadow: 0 0 14px rgba(158, 182, 167, 0.2);
 }
 
 /* Ensure all containers respect viewport width */
