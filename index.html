@@ -45,6 +45,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="natural-bg">
+    <button
+      class="mobile-menu-toggle"
+      id="mobileMenuToggle"
+      type="button"
+      aria-label="Buka navigasi"
+      aria-expanded="false"
+      aria-controls="mobileNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <p class="mobile-nav-kicker">Menu</p>
+        <button
+          class="mobile-nav-close"
+          id="mobileNavClose"
+          type="button"
+          aria-label="Tutup navigasi"
+        >
+          Tutup
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#peta">Peta</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#perlengkapan">Perlengkapan</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#tim">Tim</a>
+      </div>
+    </nav>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" hidden></div>
+
     <div class="page-shell">
       <header class="hero-section hero-panel">
         <div class="hero-content max-w-5xl mx-auto">
@@ -64,7 +99,7 @@
       </header>
 
       <main class="page-content max-w-7xl mx-auto pb-32">
-        <section class="section-shell section-map">
+        <section class="section-shell section-map" id="peta">
           <div class="section-heading fade-in">
             <p class="section-kicker">Navigasi</p>
             <h2 class="text-4xl font-black uppercase text-center">
@@ -127,7 +162,7 @@
         </section>
 
         <!-- JADWAL PERJALANAN (KONSEP LOGBOOK) -->
-        <section class="section-shell mb-32">
+        <section class="section-shell mb-32" id="itinerary">
           <div class="section-heading fade-in">
             <p class="section-kicker">Itinerary</p>
             <h2 class="text-4xl font-black uppercase text-center">
@@ -341,6 +376,7 @@
 
         <!-- GEAR & LOGISTIK (ORGANIC GRID) -->
         <section
+          id="perlengkapan"
           class="section-shell gear-layout grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32"
         >
           <!-- LEFT: TEAM GEAR -->
@@ -589,7 +625,15 @@
                     <div
                       class="flex justify-between items-center text-sm font-medium gear-item"
                     >
-                      <span>Bawang Merah, Bawang Putih, Cabe</span
+                      <span>Bawang Merah & Putih (3 Siung)</span
+                      ><span class="text-[10px] font-black uppercase text-moss"
+                        >Naila</span
+                      >
+                    </div>
+                    <div
+                      class="flex justify-between items-center text-sm font-medium gear-item"
+                    >
+                      <span>Cabe (Secukupnya)</span
                       ><span class="text-[10px] font-black uppercase text-moss"
                         >Naila</span
                       >
@@ -617,7 +661,7 @@
           </div>
 
           <!-- RIGHT: PERSONAL CHECKLIST -->
-          <aside class="lg:col-span-4">
+          <aside class="lg:col-span-4" id="checklist">
             <div
               class="organic-card p-10 rounded-[3rem] sticky top-8 slide-in-right"
             >
@@ -814,6 +858,66 @@
                   <p
                     class="text-[10px] uppercase font-black text-moss mb-4 tracking-tighter"
                   >
+                    Peralatan Mandi
+                  </p>
+                  <div class="space-y-1">
+                    <label class="check-container"
+                      ><input
+                        type="checkbox"
+                        class="checklist-item"
+                        data-kind="required"
+                      /><span class="custom-check"></span
+                      ><span class="text-xs font-bold uppercase"
+                        >Handuk</span
+                      ></label
+                    >
+                    <label class="check-container optional-item"
+                      ><input
+                        type="checkbox"
+                        class="checklist-item"
+                        data-kind="optional"
+                      /><span class="custom-check"></span
+                      ><span class="text-xs font-bold uppercase"
+                        >Sikat Gigi</span
+                      ><span class="optional-badge">Opsional</span></label
+                    >
+                    <label class="check-container optional-item"
+                      ><input
+                        type="checkbox"
+                        class="checklist-item"
+                        data-kind="optional"
+                      /><span class="custom-check"></span
+                      ><span class="text-xs font-bold uppercase"
+                        >Pasta Gigi</span
+                      ><span class="optional-badge">Opsional</span></label
+                    >
+                    <label class="check-container optional-item"
+                      ><input
+                        type="checkbox"
+                        class="checklist-item"
+                        data-kind="optional"
+                      /><span class="custom-check"></span
+                      ><span class="text-xs font-bold uppercase"
+                        >Sabun</span
+                      ><span class="optional-badge">Opsional</span></label
+                    >
+                    <label class="check-container optional-item"
+                      ><input
+                        type="checkbox"
+                        class="checklist-item"
+                        data-kind="optional"
+                      /><span class="custom-check"></span
+                      ><span class="text-xs font-bold uppercase"
+                        >Shampoo/Sachet</span
+                      ><span class="optional-badge">Opsional</span></label
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <p
+                    class="text-[10px] uppercase font-black text-moss mb-4 tracking-tighter"
+                  >
                     Makan
                   </p>
                   <div class="space-y-1">
@@ -837,14 +941,15 @@
                     Pendakian
                   </p>
                   <div class="space-y-1">
-                    <label class="check-container"
+                    <label class="check-container optional-item"
                       ><input
                         type="checkbox"
                         class="checklist-item"
-                        data-kind="required"
+                        data-kind="optional"
                       /><span class="custom-check"></span
                       ><span class="text-xs font-bold uppercase"
                         >Trekking Pole</span
+                      ><span class="optional-badge">Opsional</span
                       ></label
                     >
                     <label class="check-container"
@@ -985,7 +1090,7 @@
         </section>
 
         <!-- DAFTAR ANGGOTA TIM -->
-        <section class="section-shell mb-32">
+        <section class="section-shell mb-32" id="tim">
           <div class="section-heading fade-in">
             <p class="section-kicker">Regu</p>
             <h2
@@ -1119,6 +1224,11 @@
 
         // Checklist progress tracker
         const checklistItems = document.querySelectorAll(".checklist-item");
+        const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+        const mobileNavClose = document.getElementById("mobileNavClose");
+        const mobileNavBackdrop = document.getElementById("mobileNavBackdrop");
+        const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
         const requiredProgressFill = document.getElementById(
           "requiredProgressFill",
         );
@@ -1162,6 +1272,34 @@
           item.addEventListener("change", updateProgress);
         });
         updateProgress();
+
+        function setMobileMenuState(isOpen) {
+          mobileNav.classList.toggle("open", isOpen);
+          mobileMenuToggle.classList.toggle("open", isOpen);
+          mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+          mobileNav.setAttribute("aria-hidden", String(!isOpen));
+          mobileNavBackdrop.hidden = !isOpen;
+          document.body.classList.toggle("nav-open", isOpen);
+        }
+
+        mobileMenuToggle?.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.contains("open");
+          setMobileMenuState(!isOpen);
+        });
+
+        mobileNavClose?.addEventListener("click", () => {
+          setMobileMenuState(false);
+        });
+
+        mobileNavBackdrop?.addEventListener("click", () => {
+          setMobileMenuState(false);
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            setMobileMenuState(false);
+          });
+        });
 
         // Parallax effect on scroll
         let ticking = false;
